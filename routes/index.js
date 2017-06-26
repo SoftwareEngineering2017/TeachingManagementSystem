@@ -3,12 +3,12 @@ var router = require('koa-router')();
 const account = require('../tools/account');
 
 
-router.get('/', async function (ctx, next) {
+router.get('/', async (ctx, next) => {
   if (ctx.session.isNew) {
     await ctx.render('signin');
   }
   else {
-    await ctx.redirect('index');
+    await ctx.redirect('/index');
   }
 });
 
