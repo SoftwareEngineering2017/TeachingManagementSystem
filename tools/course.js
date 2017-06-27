@@ -56,6 +56,13 @@ class CourseController {
         return ctx.body = cour.student;
     }
 
+    static async allCourse(ctx, next) {
+        let courseIds = (await account.findById(ctx.params.stuid))['courseId'];
+        return ctx.body = await course
+            .where('_id')
+            .in(courseIds);
+    }
+
     static async delStd(ctx, next) {
     }
     

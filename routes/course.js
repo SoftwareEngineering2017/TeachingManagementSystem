@@ -17,7 +17,14 @@ router.get('/:id', course.getCourse)
 
 router.get('/allInOne/:id', course.allInOne);
 
+router.get('/allCourse/:stuid', course.allCourse);
 
+
+/*
+router.put('/upload/:id/:name', course.upload);
+        .get('/download/:id/:name, course.download);
+
+*/
 // router.redirect('/', '/');
 
 module.exports = router;
